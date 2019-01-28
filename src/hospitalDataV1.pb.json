@@ -1,0 +1,320 @@
+{
+  "nested": {
+    "Bill": {
+      "fields": {
+        "nonce": {
+          "type": "bytes",
+          "id": 1
+        },
+        "version": {
+          "type": "uint32",
+          "id": 2
+        },
+        "moduleVersion": {
+          "type": "string",
+          "id": 3
+        },
+        "billNo": {
+          "type": "string",
+          "id": 4
+        },
+        "treatmentNo": {
+          "type": "string",
+          "id": 5
+        },
+        "payCompleteDate": {
+          "type": "string",
+          "id": 6
+        },
+        "billIssueDate": {
+          "type": "string",
+          "id": 7
+        },
+        "patientNo": {
+          "type": "string",
+          "id": 8
+        },
+        "patientName": {
+          "type": "string",
+          "id": 9
+        },
+        "receipts": {
+          "rule": "repeated",
+          "type": "Receipt",
+          "id": 10
+        },
+        "prescriptions": {
+          "rule": "repeated",
+          "type": "Prescription",
+          "id": 11
+        }
+      }
+    },
+    "Receipt": {
+      "fields": {
+        "nonce": {
+          "type": "bytes",
+          "id": 1
+        },
+        "receiptNo": {
+          "type": "string",
+          "id": 2
+        },
+        "receiptType": {
+          "type": "string",
+          "id": 3
+        },
+        "patientNo": {
+          "type": "string",
+          "id": 4
+        },
+        "patientName": {
+          "type": "string",
+          "id": 5
+        },
+        "companyRegistrationNo": {
+          "type": "string",
+          "id": 6
+        },
+        "treatmentStartDate": {
+          "type": "string",
+          "id": 7
+        },
+        "treatmentEndDate": {
+          "type": "string",
+          "id": 8
+        },
+        "treatmentDepartment": {
+          "type": "string",
+          "id": 9
+        },
+        "treatmentDepartmentCode": {
+          "type": "string",
+          "id": 10
+        },
+        "treatmentType": {
+          "type": "string",
+          "id": 11
+        },
+        "treatmentTypeCode": {
+          "type": "string",
+          "id": 12
+        },
+        "coveredFee": {
+          "type": "string",
+          "id": 13
+        },
+        "uncoveredFee": {
+          "type": "string",
+          "id": 14
+        },
+        "upperLimitExcess": {
+          "type": "string",
+          "id": 15
+        },
+        "payTotal": {
+          "type": "string",
+          "id": 16
+        },
+        "patientPayTotal": {
+          "type": "string",
+          "id": 17
+        },
+        "deductAmount": {
+          "type": "string",
+          "id": 18
+        },
+        "advancePayAmount": {
+          "type": "string",
+          "id": 19
+        },
+        "payAmount": {
+          "type": "string",
+          "id": 20
+        },
+        "uncollectedPayAmount": {
+          "type": "string",
+          "id": 21
+        },
+        "receiptAmount": {
+          "type": "string",
+          "id": 22
+        },
+        "surtaxAmount": {
+          "type": "string",
+          "id": 23
+        },
+        "cashPayAmount": {
+          "type": "string",
+          "id": 24
+        },
+        "cardPayAmount": {
+          "type": "string",
+          "id": 25
+        },
+        "feeItems": {
+          "rule": "repeated",
+          "type": "FeeItem",
+          "id": 26
+        }
+      }
+    },
+    "FeeItem": {
+      "fields": {
+        "nonce": {
+          "type": "bytes",
+          "id": 1
+        },
+        "feeItemName": {
+          "type": "string",
+          "id": 2
+        },
+        "feeItemCode": {
+          "type": "string",
+          "id": 3
+        },
+        "treatmentDate": {
+          "type": "string",
+          "id": 4
+        },
+        "coveredType": {
+          "type": "string",
+          "id": 5
+        },
+        "medicalChargeCode": {
+          "type": "string",
+          "id": 6
+        },
+        "price": {
+          "type": "string",
+          "id": 7
+        },
+        "quantity": {
+          "type": "string",
+          "id": 8
+        },
+        "repeatNumber": {
+          "type": "string",
+          "id": 9
+        },
+        "feeTotal": {
+          "type": "string",
+          "id": 10
+        },
+        "coveredPatientFee": {
+          "type": "string",
+          "id": 11
+        },
+        "coveredInsuranceFee": {
+          "type": "string",
+          "id": 12
+        },
+        "coveredPatientAllFee": {
+          "type": "string",
+          "id": 13
+        },
+        "uncoveredChosenFee": {
+          "type": "string",
+          "id": 14
+        },
+        "uncoveredUnchosenFee": {
+          "type": "string",
+          "id": 15
+        }
+      }
+    },
+    "Prescription": {
+      "fields": {
+        "nonce": {
+          "type": "bytes",
+          "id": 1
+        },
+        "prescriptionNo": {
+          "type": "string",
+          "id": 2
+        },
+        "receiptNo": {
+          "type": "string",
+          "id": 3
+        },
+        "treatmentTypeCode": {
+          "type": "string",
+          "id": 4
+        },
+        "givenNo": {
+          "type": "string",
+          "id": 5
+        },
+        "patientName": {
+          "type": "string",
+          "id": 6
+        },
+        "patientBirthdate": {
+          "type": "string",
+          "id": 7
+        },
+        "patientGender": {
+          "type": "string",
+          "id": 8
+        },
+        "medicalInstitutionType": {
+          "type": "string",
+          "id": 9
+        },
+        "medicalInstitutionName": {
+          "type": "string",
+          "id": 10
+        },
+        "diagnosisCode": {
+          "type": "string",
+          "id": 11
+        },
+        "doctorName": {
+          "type": "string",
+          "id": 12
+        },
+        "doctorLicenseNo": {
+          "type": "string",
+          "id": 13
+        },
+        "prescriptionItems": {
+          "rule": "repeated",
+          "type": "PrescriptionItem",
+          "id": 14
+        }
+      }
+    },
+    "PrescriptionItem": {
+      "fields": {
+        "nonce": {
+          "type": "bytes",
+          "id": 1
+        },
+        "drugCode": {
+          "type": "string",
+          "id": 2
+        },
+        "drugName": {
+          "type": "string",
+          "id": 3
+        },
+        "dailyDose": {
+          "type": "string",
+          "id": 4
+        },
+        "dailyFrequency": {
+          "type": "string",
+          "id": 5
+        },
+        "prescriptionDuration": {
+          "type": "string",
+          "id": 6
+        },
+        "usage": {
+          "type": "string",
+          "id": 7
+        }
+      }
+    }
+  }
+}

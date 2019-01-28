@@ -1,0 +1,60 @@
+{
+  "nested": {
+    "Certificate": {
+      "fields": {
+        "version": {
+          "type": "uint32",
+          "id": 1
+        },
+        "moduleVersion": {
+          "type": "string",
+          "id": 2
+        },
+        "blockchainAddress": {
+          "type": "string",
+          "id": 3
+        },
+        "certification": {
+          "type": "Certification",
+          "id": 4
+        }
+      }
+    },
+    "Certification": {
+      "fields": {
+        "certificationResult": {
+          "type": "string",
+          "id": 1
+        },
+        "personName": {
+          "type": "string",
+          "id": 2
+        },
+        "personBirthday": {
+          "type": "string",
+          "id": 3
+        },
+        "personGender": {
+          "type": "string",
+          "id": 4
+        },
+        "personNation": {
+          "type": "string",
+          "id": 5
+        },
+        "personCi": {
+          "type": "string",
+          "id": 6
+        },
+        "personMobileCompany": {
+          "type": "string",
+          "id": 7
+        },
+        "personMobileNumber": {
+          "type": "string",
+          "id": 8
+        }
+      }
+    }
+  }
+}
