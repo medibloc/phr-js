@@ -13,7 +13,7 @@ const hashBill = (bill) => {
   const message = Bill.create(convertedBill);
   const buf = Bill.encode(message).finish();
 
-  return Medjs.utils.hash.sha3(buf);
+  return Medjs.utils.sha3(buf);
 };
 
 const fillBill = (bill) => {
