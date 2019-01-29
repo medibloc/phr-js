@@ -1,6 +1,6 @@
 {
   "nested": {
-    "Bill": {
+    "Claim": {
       "fields": {
         "nonce": {
           "type": "bytes",
@@ -14,7 +14,7 @@
           "type": "string",
           "id": 3
         },
-        "billNo": {
+        "claimNo": {
           "type": "string",
           "id": 4
         },
@@ -26,7 +26,7 @@
           "type": "string",
           "id": 6
         },
-        "billIssueDate": {
+        "claimIssueDate": {
           "type": "string",
           "id": 7
         },
