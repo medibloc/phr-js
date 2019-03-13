@@ -1,4 +1,8 @@
 {
+  "options": {
+    "java_package": "org.medibloc.phr",
+    "java_outer_classname": "CertificateDataV1"
+  },
   "nested": {
     "Certificate": {
       "fields": {
@@ -26,7 +30,7 @@
           "type": "string",
           "id": 2
         },
-        "personBirthday": {
+        "personBirthdate": {
           "type": "string",
           "id": 3
         },
