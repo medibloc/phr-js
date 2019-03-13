@@ -1,4 +1,4 @@
-import Medjs from 'medjs';
+import Panaceajs from '@medibloc/panacea-js';
 import protobuf from 'protobufjs/light';
 import * as jsonDescriptor from 'claimDataV1.pb.json';
 
@@ -13,7 +13,7 @@ const hashClaim = (claim) => {
   const message = Claim.create(convertedClaim);
   const buf = Claim.encode(message).finish();
 
-  return Medjs.utils.sha3(buf);
+  return Panaceajs.utils.sha3(buf);
 };
 
 const fillClaim = (claim) => {

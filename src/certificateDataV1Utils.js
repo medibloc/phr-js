@@ -1,4 +1,4 @@
-import Medjs from 'medjs';
+import Panaceajs from '@medibloc/panacea-js';
 import protobuf from 'protobufjs/light';
 import * as jsonDescriptor from 'certificateDataV1.pb.json';
 
@@ -13,7 +13,7 @@ const hashCertificate = (certificate) => {
   const message = Certificate.create(convertedCertificate);
   const buf = Certificate.encode(message).finish();
 
-  return Medjs.utils.sha3(buf);
+  return Panaceajs.utils.sha3(buf);
 };
 
 const fillCertificate = (certificate) => {

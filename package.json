@@ -1,6 +1,6 @@
 {
   "name": "@medibloc/phr-js",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "JavaScript library for MediBloc",
   "main": "lib/index.js",
   "directories": {
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/medibloc/phr-js#readme",
   "dependencies": {
-    "medjs": "1.0.1",
+    "@medibloc/panacea-js": "1.0.2",
     "protobufjs": "~6.8.6"
   },
   "devDependencies": {
@@ -52,7 +52,6 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
     "eslint-plugin-import": "^2.11.0",
-    "medjs": "1.0.1",
     "mocha": "^5.1.0",
     "pre-commit": "^1.2.2",
     "sinon": "^4.5.0",
