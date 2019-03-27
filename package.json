@@ -1,6 +1,6 @@
 {
   "name": "@medibloc/phr-js",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "JavaScript library for MediBloc",
   "main": "lib/index.js",
   "directories": {
@@ -15,7 +15,9 @@
     "clean-lib": "rm -rf lib",
     "lint": "eslint .",
     "test": "mocha --recursive --require babel-core/register --reporter spec",
-    "uglify": "uglifyjs -nm -o ./dist/phr-js.min.js ./dist/phr-js.js"
+    "uglify": "uglifyjs -nm -o ./dist/phr-js.min.js ./dist/phr-js.js",
+    "pbjs:certificate": "pbjs -t json ./src/protobuf/CertificateDataV1.proto > ./src/certificateDataV1.pb.json",
+    "pbjs:claim": "pbjs -t json ./src/protobuf/ClaimDataV1.proto > ./src/claimDataV1.pb.json"
   },
   "pre-commit": [
     "lint"

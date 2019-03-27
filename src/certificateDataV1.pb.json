@@ -14,9 +14,13 @@
           "type": "string",
           "id": 2
         },
+        "expiryDate": {
+          "type": "string",
+          "id": 3
+        },
         "certification": {
           "type": "Certification",
-          "id": 3
+          "id": 4
         }
       }
     },
