@@ -16,7 +16,15 @@ const hashCertificate = (certificate) => {
   return Panaceajs.utils.sha3(buf);
 };
 
+const validateCertificate = (certificate) => {
+  if (!certificate.expiryDate) {
+    throw new Error('expiryDate is empty.');
+  }
+};
+
 const fillCertificate = (certificate) => {
+  validateCertificate(certificate);
+
   const filled = certificate;
   filled.version = 1;
 
