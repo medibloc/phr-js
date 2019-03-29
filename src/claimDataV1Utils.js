@@ -20,7 +20,9 @@ const validateClaim = (claim) => {
   const root = protobuf.Root.fromJSON(jsonDescriptor);
   const Claim = root.lookupType('Claim');
   const errMsg = Claim.verify(claim);
-  if (errMsg) throw Error(errMsg);
+  if (errMsg) {
+    throw Error(errMsg);
+  }
 };
 
 const fillClaim = (claim) => {
@@ -35,5 +37,6 @@ const fillClaim = (claim) => {
 
 export default {
   hashClaim,
+  validateClaim,
   fillClaim,
 };
