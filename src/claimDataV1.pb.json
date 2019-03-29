@@ -10,39 +10,19 @@
           "type": "uint32",
           "id": 1
         },
-        "billNo": {
+        "claimNo": {
           "type": "string",
           "id": 2
-        },
-        "treatmentNo": {
-          "type": "string",
-          "id": 3
-        },
-        "payCompleteDate": {
-          "type": "string",
-          "id": 4
-        },
-        "billIssueDate": {
-          "type": "string",
-          "id": 5
-        },
-        "patientNo": {
-          "type": "string",
-          "id": 6
-        },
-        "patientName": {
-          "type": "string",
-          "id": 7
         },
         "receipts": {
           "rule": "repeated",
           "type": "Receipt",
-          "id": 8
+          "id": 3
         },
-        "prescriptions": {
+        "diagnoses": {
           "rule": "repeated",
-          "type": "Prescription",
-          "id": 9
+          "type": "Diagnosis",
+          "id": 4
         }
       }
     },
@@ -211,88 +191,19 @@
         }
       }
     },
-    "Prescription": {
+    "Diagnosis": {
       "fields": {
-        "prescriptionNo": {
+        "diagnosisCodeVersion": {
           "type": "string",
           "id": 1
         },
-        "receiptNo": {
-          "type": "string",
+        "diagnosisCodeType": {
+          "type": "uint32",
           "id": 2
-        },
-        "treatmentTypeCode": {
-          "type": "string",
-          "id": 3
-        },
-        "givenNo": {
-          "type": "string",
-          "id": 4
-        },
-        "patientName": {
-          "type": "string",
-          "id": 5
-        },
-        "patientBirthdate": {
-          "type": "string",
-          "id": 6
-        },
-        "patientGender": {
-          "type": "string",
-          "id": 7
-        },
-        "medicalInstitutionType": {
-          "type": "string",
-          "id": 8
-        },
-        "medicalInstitutionName": {
-          "type": "string",
-          "id": 9
         },
         "diagnosisCode": {
           "type": "string",
-          "id": 10
-        },
-        "doctorName": {
-          "type": "string",
-          "id": 11
-        },
-        "doctorLicenseNo": {
-          "type": "string",
-          "id": 12
-        },
-        "prescriptionItems": {
-          "rule": "repeated",
-          "type": "PrescriptionItem",
-          "id": 13
-        }
-      }
-    },
-    "PrescriptionItem": {
-      "fields": {
-        "drugCode": {
-          "type": "string",
-          "id": 1
-        },
-        "drugName": {
-          "type": "string",
-          "id": 2
-        },
-        "dailyDose": {
-          "type": "string",
           "id": 3
-        },
-        "dailyFrequency": {
-          "type": "string",
-          "id": 4
-        },
-        "prescriptionDuration": {
-          "type": "string",
-          "id": 5
-        },
-        "usage": {
-          "type": "string",
-          "id": 6
         }
       }
     }
