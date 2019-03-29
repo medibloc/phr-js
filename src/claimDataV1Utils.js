@@ -16,7 +16,16 @@ const hashClaim = (claim) => {
   return Panaceajs.utils.sha3(buf);
 };
 
+const validateClaim = (claim) => {
+  const root = protobuf.Root.fromJSON(jsonDescriptor);
+  const Claim = root.lookupType('Claim');
+  const errMsg = Claim.verify(claim);
+  if (errMsg) throw Error(errMsg);
+};
+
 const fillClaim = (claim) => {
+  validateClaim(claim);
+
   const filled = claim;
   filled.version = 1;
 
