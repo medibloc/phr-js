@@ -1,3 +1,4 @@
+import assert from 'assert';
 import Panaceajs from '@medibloc/panacea-js';
 import protobuf from 'protobufjs/light';
 import * as jsonDescriptor from 'claimDataV1.pb.json';
@@ -19,9 +20,24 @@ const hashClaim = (claim) => {
 const validateClaim = (claim) => {
   const root = protobuf.Root.fromJSON(jsonDescriptor);
   const Claim = root.lookupType('Claim');
+
   const errMsg = Claim.verify(claim);
   if (errMsg) {
     throw Error(errMsg);
+  }
+
+  const buffer = Claim.encode(claim).finish();
+  const decoded = Claim.decode(buffer);
+  const expected = Claim.toObject(decoded);
+
+  try {
+    assert.deepStrictEqual(claim, expected);
+  } catch (err) {
+    if (err instanceof assert.AssertionError) {
+      throw Error(`invalid field detected\n${err}`);
+    } else {
+      throw Error(err);
+    }
   }
 };
 

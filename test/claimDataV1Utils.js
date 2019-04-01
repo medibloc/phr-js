@@ -7,16 +7,20 @@ describe('claimDataV1Utils', () => {
 
   beforeEach(() => {
     sampleClaim = {
+      version: 1,
       claimNo: '20181204-S1284',
       receipts: [{
         receiptNo: '20181204-S1284',
         receiptType: 'I',
         patientNo: '12345678',
         patientName: '홍길동',
+        companyRegistrationNo: '11100999',
         treatmentStartDate: '2018-12-06',
         treatmentEndDate: '2018-12-06',
         treatmentDepartment: '피부과',
         treatmentDepartmentCode: 'DER',
+        treatmentType: '',
+        treatmentTypeCode: '',
         coveredFee: '11000',
         uncoveredFee: '20000',
         upperLimitExcess: '0',
@@ -32,7 +36,9 @@ describe('claimDataV1Utils', () => {
         cardPayAmount: '21000',
         feeItems: [{
           feeItemName: '초진 진찰료',
+          feeItemCode: '',
           treatmentDate: '2018-12-06',
+          coveredType: '',
           medicalChargeCode: 'AA157',
           price: '11000',
           quantity: '1',
@@ -45,7 +51,9 @@ describe('claimDataV1Utils', () => {
           uncoveredUnchosenFee: '0',
         }, {
           feeItemName: '검사료',
+          feeItemCode: '',
           treatmentDate: '2018-12-06',
+          coveredType: '',
           medicalChargeCode: 'BB157',
           price: '20000',
           quantity: '1',
@@ -58,7 +66,7 @@ describe('claimDataV1Utils', () => {
           uncoveredUnchosenFee: '0',
         }],
       }],
-      diagnosis: [{
+      diagnoses: [{
         diagnosisCodeVersion: 'ICD-10-2016',
         diagnosisCodeType: 10, // 주상병
         diagnosisCode: 'J00',
@@ -72,21 +80,42 @@ describe('claimDataV1Utils', () => {
 
   it('validateClaim - success', () => {
     validateClaim(sampleClaim);
+    console.log('No Error');
   });
 
   it('validateClaim - fail:object expected', () => {
     sampleClaim = 'abc';
-    assert.throws(() => validateClaim(sampleClaim), /object expected/);
+    assert.throws(() => {
+      try {
+        validateClaim(sampleClaim);
+      } catch (err) {
+        console.log(err);
+        throw err;
+      }
+    }, /object expected/);
   });
 
   it('validateClaim - fail:missing field', () => {
     sampleClaim.claimNo = null;
-    validateClaim(sampleClaim); // TODO - throw error
-    // assert.throws(() => validateClaim(sampleClaim), //);
+    assert.throws(() => {
+      try {
+        validateClaim(sampleClaim);
+      } catch (err) {
+        console.log(err);
+        throw err;
+      }
+    }, /claimNo: string expected/);
   });
 
   it('validateClaim - fail:invalid field', () => {
     sampleClaim.invalidField = 'invalidValue';
-    validateClaim(sampleClaim);
+    assert.throws(() => {
+      try {
+        validateClaim(sampleClaim);
+      } catch (err) {
+        console.log(err);
+        throw err;
+      }
+    }, /invalid field detected/);
   });
 });

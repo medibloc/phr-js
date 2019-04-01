@@ -7,10 +7,12 @@
     "Claim": {
       "fields": {
         "version": {
+          "rule": "required",
           "type": "uint32",
           "id": 1
         },
         "claimNo": {
+          "rule": "required",
           "type": "string",
           "id": 2
         },
@@ -29,98 +31,122 @@
     "Receipt": {
       "fields": {
         "receiptNo": {
+          "rule": "required",
           "type": "string",
           "id": 1
         },
         "receiptType": {
+          "rule": "required",
           "type": "string",
           "id": 2
         },
         "patientNo": {
+          "rule": "required",
           "type": "string",
           "id": 3
         },
         "patientName": {
+          "rule": "required",
           "type": "string",
           "id": 4
         },
         "companyRegistrationNo": {
+          "rule": "required",
           "type": "string",
           "id": 5
         },
         "treatmentStartDate": {
+          "rule": "required",
           "type": "string",
           "id": 6
         },
         "treatmentEndDate": {
+          "rule": "required",
           "type": "string",
           "id": 7
         },
         "treatmentDepartment": {
+          "rule": "required",
           "type": "string",
           "id": 8
         },
         "treatmentDepartmentCode": {
+          "rule": "required",
           "type": "string",
           "id": 9
         },
         "treatmentType": {
+          "rule": "required",
           "type": "string",
           "id": 10
         },
         "treatmentTypeCode": {
+          "rule": "required",
           "type": "string",
           "id": 11
         },
         "coveredFee": {
+          "rule": "required",
           "type": "string",
           "id": 12
         },
         "uncoveredFee": {
+          "rule": "required",
           "type": "string",
           "id": 13
         },
         "upperLimitExcess": {
+          "rule": "required",
           "type": "string",
           "id": 14
         },
         "payTotal": {
+          "rule": "required",
           "type": "string",
           "id": 15
         },
         "patientPayTotal": {
+          "rule": "required",
           "type": "string",
           "id": 16
         },
         "deductAmount": {
+          "rule": "required",
           "type": "string",
           "id": 17
         },
         "advancePayAmount": {
+          "rule": "required",
           "type": "string",
           "id": 18
         },
         "payAmount": {
+          "rule": "required",
           "type": "string",
           "id": 19
         },
         "uncollectedPayAmount": {
+          "rule": "required",
           "type": "string",
           "id": 20
         },
         "receiptAmount": {
+          "rule": "required",
           "type": "string",
           "id": 21
         },
         "surtaxAmount": {
+          "rule": "required",
           "type": "string",
           "id": 22
         },
         "cashPayAmount": {
+          "rule": "required",
           "type": "string",
           "id": 23
         },
         "cardPayAmount": {
+          "rule": "required",
           "type": "string",
           "id": 24
         },
@@ -134,58 +160,72 @@
     "FeeItem": {
       "fields": {
         "feeItemName": {
+          "rule": "required",
           "type": "string",
           "id": 1
         },
         "feeItemCode": {
+          "rule": "required",
           "type": "string",
           "id": 2
         },
         "treatmentDate": {
+          "rule": "required",
           "type": "string",
           "id": 3
         },
         "coveredType": {
+          "rule": "required",
           "type": "string",
           "id": 4
         },
         "medicalChargeCode": {
+          "rule": "required",
           "type": "string",
           "id": 5
         },
         "price": {
+          "rule": "required",
           "type": "string",
           "id": 6
         },
         "quantity": {
+          "rule": "required",
           "type": "string",
           "id": 7
         },
         "repeatNumber": {
+          "rule": "required",
           "type": "string",
           "id": 8
         },
         "feeTotal": {
+          "rule": "required",
           "type": "string",
           "id": 9
         },
         "coveredPatientFee": {
+          "rule": "required",
           "type": "string",
           "id": 10
         },
         "coveredInsuranceFee": {
+          "rule": "required",
           "type": "string",
           "id": 11
         },
         "coveredPatientAllFee": {
+          "rule": "required",
           "type": "string",
           "id": 12
         },
         "uncoveredChosenFee": {
+          "rule": "required",
           "type": "string",
           "id": 13
         },
         "uncoveredUnchosenFee": {
+          "rule": "required",
           "type": "string",
           "id": 14
         }
@@ -194,14 +234,17 @@
     "Diagnosis": {
       "fields": {
         "diagnosisCodeVersion": {
+          "rule": "required",
           "type": "string",
           "id": 1
         },
         "diagnosisCodeType": {
+          "rule": "required",
           "type": "uint32",
           "id": 2
         },
         "diagnosisCode": {
+          "rule": "required",
           "type": "string",
           "id": 3
         }
