@@ -1,14 +1,13 @@
 import assert from 'assert';
 import { describe, beforeEach, it } from 'mocha';
-import { verify } from '../src/verifier';
-import * as jsonDescriptor from '../src/claimDataV1.pb.json';
+import { fillClaim } from '../src/claimDataV1Utils';
 
-describe('claimDataV1Utils', () => {
+describe('fillClaim', () => {
   let sampleClaim;
 
   beforeEach(() => {
-    sampleClaim = {
-      version: 1,
+    sampleClaim = fillClaim({
+      // version: 1,
       claimNo: '20181204-S1284',
       receipts: [{
         receiptNo: '20181204-S1284',
@@ -76,31 +75,19 @@ describe('claimDataV1Utils', () => {
         diagnosisCodeType: 20, // 부상병
         diagnosisCode: 'J30.3',
       }],
-    };
+    });
   });
 
-  it('validateClaim - success', () => {
-    verify(jsonDescriptor, 'Claim', sampleClaim);
+  it('success', () => {
+    fillClaim(sampleClaim);
     console.log('No Error');
   });
 
-  it('validateClaim - fail:object expected', () => {
-    sampleClaim = 'abc';
-    assert.throws(() => {
-      try {
-        verify(jsonDescriptor, 'Claim', sampleClaim);
-      } catch (err) {
-        console.log(err);
-        throw err;
-      }
-    }, /object expected/);
-  });
-
-  it('validateClaim - fail:missing field', () => {
+  it('fail - missing field', () => {
     sampleClaim.claimNo = null;
     assert.throws(() => {
       try {
-        verify(jsonDescriptor, 'Claim', sampleClaim);
+        fillClaim(sampleClaim);
       } catch (err) {
         console.log(err);
         throw err;
@@ -108,15 +95,15 @@ describe('claimDataV1Utils', () => {
     }, /claimNo: string expected/);
   });
 
-  it('validateClaim - fail:invalid field', () => {
-    sampleClaim.invalidField = 'invalidValue';
+  it('fail - invalid field', () => {
+    sampleClaim.zzzzzz = 'invalidValue';
     assert.throws(() => {
       try {
-        verify(jsonDescriptor, 'Claim', sampleClaim);
+        fillClaim(sampleClaim);
       } catch (err) {
         console.log(err);
         throw err;
       }
-    }, /invalid field detected/);
+    }, /invalid field detected(.|\n)+- *zzzzzz: 'invalidValue'/);
   });
 });
