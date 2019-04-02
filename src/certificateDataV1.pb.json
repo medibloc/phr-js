@@ -7,18 +7,22 @@
     "Certificate": {
       "fields": {
         "version": {
+          "rule": "required",
           "type": "uint32",
           "id": 1
         },
         "blockchainAddress": {
+          "rule": "required",
           "type": "string",
           "id": 2
         },
         "expiryDate": {
+          "rule": "required",
           "type": "string",
           "id": 3
         },
         "certification": {
+          "rule": "required",
           "type": "Certification",
           "id": 4
         }
@@ -27,34 +31,42 @@
     "Certification": {
       "fields": {
         "certificationResult": {
+          "rule": "required",
           "type": "string",
           "id": 1
         },
         "personName": {
+          "rule": "required",
           "type": "string",
           "id": 2
         },
         "personBirthdate": {
+          "rule": "required",
           "type": "string",
           "id": 3
         },
         "personGender": {
+          "rule": "required",
           "type": "string",
           "id": 4
         },
         "personNation": {
+          "rule": "required",
           "type": "string",
           "id": 5
         },
         "personCi": {
+          "rule": "required",
           "type": "string",
           "id": 6
         },
         "personMobileCompany": {
+          "rule": "required",
           "type": "string",
           "id": 7
         },
         "personMobileNumber": {
+          "rule": "required",
           "type": "string",
           "id": 8
         }
