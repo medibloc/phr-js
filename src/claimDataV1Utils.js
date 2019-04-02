@@ -25,6 +25,8 @@ const fillClaim = (claim) => {
 
   verify(jsonDescriptor, 'Claim', claim);
 
+  // TODO : add salt to each elements
+
   return filled;
 };
 

@@ -25,6 +25,8 @@ const fillCertificate = (certificate) => {
 
   verify(jsonDescriptor, 'Certificate', filled);
 
+  // TODO : add salt to each elements
+
   return filled;
 };
 
