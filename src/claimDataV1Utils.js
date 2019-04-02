@@ -18,12 +18,13 @@ const hashClaim = (claim) => {
 };
 
 const fillClaim = (claim) => {
-  verify(jsonDescriptor, 'Claim', claim);
-
   const filled = claim;
   filled.version = 1;
 
   // TODO : fill recursively
+
+  verify(jsonDescriptor, 'Claim', claim);
+
   return filled;
 };
 

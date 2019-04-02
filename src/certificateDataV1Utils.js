@@ -1,6 +1,7 @@
 import Panaceajs from '@medibloc/panacea-js';
 import protobuf from 'protobufjs/light';
 import * as jsonDescriptor from 'certificateDataV1.pb.json';
+import { verify } from './verifier';
 
 const hashCertificate = (certificate) => {
   const convertedCertificate = certificate; // TODO : validating and mapping values
@@ -16,19 +17,14 @@ const hashCertificate = (certificate) => {
   return Panaceajs.utils.sha3(buf);
 };
 
-const validateCertificate = (certificate) => {
-  if (!certificate.expiryDate) {
-    throw new Error('expiryDate is empty.');
-  }
-};
-
 const fillCertificate = (certificate) => {
-  validateCertificate(certificate);
-
   const filled = certificate;
   filled.version = 1;
 
   // TODO : fill recursively
+
+  verify(jsonDescriptor, 'Certificate', filled);
+
   return filled;
 };
 
