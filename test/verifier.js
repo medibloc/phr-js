@@ -1,6 +1,7 @@
 import assert from 'assert';
 import { describe, beforeEach, it } from 'mocha';
-import { validateClaim } from '../src/claimDataV1Utils';
+import { verify } from '../src/verifier';
+import * as jsonDescriptor from '../src/claimDataV1.pb.json';
 
 describe('claimDataV1Utils', () => {
   let sampleClaim;
@@ -79,7 +80,7 @@ describe('claimDataV1Utils', () => {
   });
 
   it('validateClaim - success', () => {
-    validateClaim(sampleClaim);
+    verify(jsonDescriptor, 'Claim', sampleClaim);
     console.log('No Error');
   });
 
@@ -87,7 +88,7 @@ describe('claimDataV1Utils', () => {
     sampleClaim = 'abc';
     assert.throws(() => {
       try {
-        validateClaim(sampleClaim);
+        verify(jsonDescriptor, 'Claim', sampleClaim);
       } catch (err) {
         console.log(err);
         throw err;
@@ -99,7 +100,7 @@ describe('claimDataV1Utils', () => {
     sampleClaim.claimNo = null;
     assert.throws(() => {
       try {
-        validateClaim(sampleClaim);
+        verify(jsonDescriptor, 'Claim', sampleClaim);
       } catch (err) {
         console.log(err);
         throw err;
@@ -111,7 +112,7 @@ describe('claimDataV1Utils', () => {
     sampleClaim.invalidField = 'invalidValue';
     assert.throws(() => {
       try {
-        validateClaim(sampleClaim);
+        verify(jsonDescriptor, 'Claim', sampleClaim);
       } catch (err) {
         console.log(err);
         throw err;
